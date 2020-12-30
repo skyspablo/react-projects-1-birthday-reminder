@@ -10,3 +10,6 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Demo
+Visit [https://awesome-albattani-cc0f14.netlify.app](https://awesome-albattani-cc0f14.netlify.app)
