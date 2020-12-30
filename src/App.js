@@ -1,24 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import Card from "./components/Card";
+import UserCard from "./components/UserCard";
+import {useState} from "react";
+
+import {people as data} from "./data/people"
 
 function App() {
+  const [people, setPeople] = useState(data)
+  const clearAll = () => {
+    setPeople([]);
+  }
+
+  let cards = people.map( (person) => {
+     return (
+      <UserCard name={person.name} img={person.img} age={person.age}/>
+     )
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Card>
+          <h1>{people.length} birthdays today</h1>
+          {cards}
+          <button className={"btn"} type={"button"} onClick={clearAll}>Clear All</button>
+      </Card>
+    </>
   );
 }
 
